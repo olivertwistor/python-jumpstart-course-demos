@@ -10,8 +10,6 @@ class CatService:
     """
     def __init__(self, save_folder: str, service_url: str):
         """
-        Creates the save folder if it's not already exists.
-
         :param save_folder: The folder in which the cat images are to be stored
         :param service_url: The URL from which to get the cat images
         """

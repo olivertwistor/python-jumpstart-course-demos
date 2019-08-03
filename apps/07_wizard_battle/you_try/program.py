@@ -13,7 +13,6 @@ def main():
     game = Game()
     game.start()
     game.run()
-    game.end()
 
 
 if __name__ == '__main__':

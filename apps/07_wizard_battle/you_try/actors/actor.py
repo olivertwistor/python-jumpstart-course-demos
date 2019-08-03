@@ -9,8 +9,8 @@ class Actor:
 
     def __init__(self, name: str, level: int):
         """
-        Creates an actor with a name/identifier and a level. Also adds an
-        attack modifier property initialized to 1.0.
+        Creates an actor with a name/identifier and a level. Also adds a
+        defense modifier initialized to 1.0.
 
         :param name: Something that identifies this actor to the player.
         :param level: Level of this actor; must be greater than 0.
@@ -23,7 +23,7 @@ class Actor:
 
         self.name = name
         self.level = level
-        self.attack_mod = 1.0
+        self.defense_mod = 1.0
 
     def __str__(self):
         """
@@ -32,18 +32,19 @@ class Actor:
         :return: string
         """
 
-        return "{} (level {})".format(self.name, self.level)
+        return "{} [{}]".format(self.name, self.level)
 
-    def attack(self) -> int:
+    def defend(self) -> int:
         """
-        Performs a standard attack. The formula for calculating attack strength
-        is as follows: actor level * attack modifier * random(1-12).
+        Performs a standard defensive maneuver. The formula for calculating
+        defense strength is as follows: actor level * defense modifier *
+        random(1-12).
 
         :rtype: int
-        :return: The attack strength.
+        :return: The defense strength.
         """
 
-        attack_strength = self.level * self.attack_mod * random.randint(1, 12)
-        attack_strength = int(attack_strength)
+        defense_strength = self.level * self.defense_mod * random.randint(1, 12)
+        defense_strength = int(defense_strength)
 
-        return attack_strength
+        return defense_strength

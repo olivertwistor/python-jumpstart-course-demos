@@ -1,5 +1,3 @@
-import random
-
 from actors.animal import Animal
 
 
@@ -21,17 +19,4 @@ class FlyingAnimal(Animal):
         """
 
         super().__init__(name, level)
-        self.defense_mod = 2
-
-    def defend(self) -> int:
-        """
-        Performs a standard defensive maneuver. The formula for calculating
-        defense strength is as follows: actor level * defense modifier *
-        random(1-12).
-
-        :return: The defense strength.
-        """
-
-        defense_strength = self.level * self.defense_mod * random.randint(1, 12)
-
-        return defense_strength
+        self.defense_mod *= 2

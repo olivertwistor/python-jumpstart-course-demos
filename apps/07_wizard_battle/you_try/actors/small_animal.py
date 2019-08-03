@@ -3,14 +3,14 @@ from actors.animal import Animal
 
 class SmallAnimal(Animal):
     """
-    A small animal is a special kind of animal, in that it only does half the
-    attack damage it normally would if it was a normal-sized animal.
+    A small animal is a special kind of animal, in that it only has half the
+    defense modifier of what a normal-sized animal has.
     """
 
     def __init__(self, name: str, level: int):
         """
         Creates a small animal with a name/identifier and a level. Sets the
-        attack modifier to 0.5.
+        defense modifier to half that of its superclass.
 
         :param name: Something that identifies this small animal to the player.
         :param level: Level of this small animal; must be greater than 0.
@@ -19,4 +19,4 @@ class SmallAnimal(Animal):
         """
 
         super().__init__(name, level)
-        self.attack_mod = 0.5
+        self.defense_mod *= 0.5
